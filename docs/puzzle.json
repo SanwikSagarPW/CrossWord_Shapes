@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "title": "Geometry Terminology",
+    "author": "Shivansh",
+    "size": {
+      "rows": 15,
+      "cols": 15
+    }
+  },
+  "clues": {
+    "across": [
+      {
+        "number": 1,
+        "clue": "A four-sided figure with four right angles",
+        "answer": "RECTANGLE",
+        "direction": "across",
+        "row": 14,
+        "col": 6
+      },
+      
+      {
+        "number": 2,
+        "clue": "An angle less than 90 degrees",
+        "answer": "ACUTE",
+        "direction": "across",
+        "row": 10,
+        "col": 7
+      },
+      {
+        "number": 3,
+        "clue": "A triangle with two equal sides",
+        "answer": "ISOSCELES",
+        "direction": "across",
+        "row": 8,
+        "col": 3
+      },
+      {
+        "number": 4,
+        "clue": "Lines that never intersect",
+        "answer": "PARALLEL",
+        "direction": "across",
+        "row": 12,
+        "col": 1
+      }
+    ],
+    "down": [
+      {
+        "number": 5,
+        "clue": "The longest side of a right-angled triangle",
+        "answer": "HYPOTENUSE",
+        "direction": "down",
+        "row": 0,
+        "col": 6
+      },
+      {
+        "number": 6,
+        "clue": "A line from the center of a circle to its edge",
+        "answer": "RADIUS",
+        "direction": "down",
+        "row": 3,
+        "col": 4
+      },
+      {
+        "number": 7,
+        "clue": "A shape with eight sides",
+        "answer": "OCTAGON",
+        "direction": "down",
+        "row": 0,
+        "col": 14
+      },
+      {
+        "number": 8,
+        "clue": "The measurement of space inside a 2D shape",
+        "answer": "AREA",
+        "direction": "down",
+        "row": 10,
+        "col": 7
+      },
+      {
+        "number":9,
+        "clue": "An angle more than 90 degrees",
+        "answer": "OBTUSE",
+        "direction": "down",
+        "row": 9,
+        "col": 14
+      },
+      {
+        "number": 10,
+        "clue": "An angle more than 90 degrees",
+        "answer": "TANGENT",
+        "direction": "down",
+        "row": 4,
+        "col": 10
+      }
+    ]
+  }
+}
