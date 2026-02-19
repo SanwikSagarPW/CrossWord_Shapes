@@ -210,36 +210,41 @@
         
         /* How to Play Content */
         .htp-title {
-            font-family: 'Bungee', cursive;
-            font-size: 3rem;
-            margin-bottom: 40px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 3.5rem;
+            margin-bottom: 50px;
             text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 0;
+            font-weight: bold;
+            letter-spacing: 8px;
         }
-        .htp-title span { color: var(--accent-color); }
+        .htp-title span { 
+            color: var(--accent-color); 
+        }
         .htp-letter-box {
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            width: 50px;
-            height: 50px;
-            border: 2px solid var(--accent-color);
-            background-color: var(--cell-background);
+            width: 60px;
+            height: 60px;
+            border: 3px solid var(--accent-color);
+            background-color: transparent;
             font-family: 'Roboto Mono', monospace;
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: var(--accent-color);
+            margin: 0 2px;
         }
         
         .htp-steps {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 50px;
         }
         
         .htp-step {
@@ -247,71 +252,64 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            gap: 20px;
+            gap: 30px;
         }
         
         .htp-step-number {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--accent-color);
-            font-weight: bold;
-        }
-        
-        .htp-step-text {
-            font-size: 1.2rem;
-            color: var(--text-color);
-            max-width: 600px;
-            line-height: 1.6;
+            font-weight: normal;
+            font-family: 'Roboto Mono', monospace;
         }
         
         .htp-example-grid {
             display: grid;
-            grid-template-columns: repeat(4, 50px);
-            grid-template-rows: repeat(3, 50px);
-            gap: 2px;
-            margin: 10px 0;
+            grid-template-columns: repeat(4, 60px);
+            grid-template-rows: repeat(3, 60px);
+            gap: 3px;
+            margin: 20px 0;
+            background-color: var(--background-color);
         }
         
         .htp-grid-cell {
-            border: 1px solid var(--border-color);
-            background-color: var(--cell-background);
+            border: 2px solid rgba(68, 68, 68, 0.5);
+            background-color: var(--accent-color);
             display: flex;
             justify-content: center;
             align-items: center;
             font-family: 'Roboto Mono', monospace;
             font-weight: bold;
-            font-size: 1.2rem;
-            color: var(--accent-color);
+            font-size: 1.8rem;
+            color: var(--background-color);
             position: relative;
         }
         
         .htp-grid-cell.empty {
-            background-color: var(--grid-background);
-        }
-        
-        .htp-grid-cell.highlight {
-            background-color: rgba(3, 218, 198, 0.3);
+            background-color: transparent;
+            border: none;
         }
         
         .htp-grid-number {
             position: absolute;
-            top: 2px;
-            left: 3px;
-            font-size: 0.5rem;
-            color: var(--text-color);
+            top: 3px;
+            left: 5px;
+            font-size: 0.7rem;
+            color: rgba(18, 18, 18, 0.7);
+            font-weight: bold;
         }
         
         .htp-check-btn {
-            padding: 15px 40px;
-            font-size: 1.1rem;
+            padding: 18px 60px;
+            font-size: 1.3rem;
             font-family: 'Roboto Mono', monospace;
             font-weight: bold;
             background-color: var(--accent-color);
             color: var(--background-color);
             border: none;
             border-radius: 8px;
-            cursor: pointer;
-            letter-spacing: 2px;
-            box-shadow: 0 4px 15px rgba(3, 218, 198, 0.4);
+            cursor: default;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
         
         .back-btn {
@@ -342,22 +340,28 @@
             .btn { padding: 15px 30px; font-size: 1em; }
             .popup-content { padding: 25px 15px; max-width: 95%; }
             .back-btn { padding: 12px 40px; font-size: 1em; }
-            .htp-title { font-size: 2rem; margin-bottom: 30px; }
-            .htp-letter-box { width: 40px; height: 40px; font-size: 1.2rem; }
-            .htp-step-text { font-size: 1rem; }
-            .htp-example-grid { grid-template-columns: repeat(4, 40px); grid-template-rows: repeat(3, 40px); }
-            .htp-grid-cell { font-size: 1rem; }
-            .htp-check-btn { padding: 12px 30px; font-size: 1rem; }
+            .htp-title { font-size: 2.2rem; margin-bottom: 35px; letter-spacing: 4px; }
+            .htp-letter-box { width: 45px; height: 45px; font-size: 1.5rem; }
+            .htp-step-number { font-size: 1.3rem; }
+            .htp-example-grid { grid-template-columns: repeat(4, 45px); grid-template-rows: repeat(3, 45px); gap: 2px; }
+            .htp-grid-cell { font-size: 1.3rem; }
+            .htp-grid-number { font-size: 0.6rem; }
+            .htp-check-btn { padding: 15px 45px; font-size: 1.1rem; }
+            .htp-steps { gap: 35px; }
+            .htp-step { gap: 20px; }
         }
         @media (max-width: 400px) {
             .game-title-text { font-size: 3rem; }
             .puzzle-subtitle { font-size: 0.8rem; letter-spacing: 2px; }
             .buttons-container { padding: 0 10px; }
             .back-btn { padding: 10px 30px; font-size: 0.9em; }
-            .htp-title { font-size: 1.5rem; margin-bottom: 20px; }
-            .htp-letter-box { width: 35px; height: 35px; font-size: 1rem; }
-            .htp-example-grid { grid-template-columns: repeat(4, 35px); grid-template-rows: repeat(3, 35px); }
-            .htp-grid-cell { font-size: 0.9rem; }
+            .htp-title { font-size: 1.6rem; margin-bottom: 25px; letter-spacing: 3px; }
+            .htp-letter-box { width: 35px; height: 35px; font-size: 1.2rem; }
+            .htp-step-number { font-size: 1.1rem; }
+            .htp-example-grid { grid-template-columns: repeat(4, 38px); grid-template-rows: repeat(3, 38px); gap: 2px; }
+            .htp-grid-cell { font-size: 1.1rem; }
+            .htp-grid-number { font-size: 0.5rem; top: 2px; left: 3px; }
+            .htp-check-btn { padding: 12px 35px; font-size: 1rem; }
         }
         
         /* Landscape mode for mobile/tablets */
@@ -366,7 +370,10 @@
             .htp-title { font-size: 1.8rem; margin-bottom: 20px; }
             .htp-steps { gap: 25px; }
             .htp-step { gap: 15px; }
-            .htp-step-text { font-size: 0.9rem; }
+            .htp-step-number { font-size: 1.1rem; }
+            .htp-example-grid { grid-template-columns: repeat(4, 40px); grid-template-rows: repeat(3, 40px); }
+            .htp-grid-cell { font-size: 1.2rem; }
+            .htp-check-btn { padding: 12px 40px; font-size: 1rem; }
             .back-btn { margin-top: 20px; padding: 10px 35px; }
         }
 
@@ -412,10 +419,7 @@
         <div class="popup-content">
             <!-- Title with boxed letters -->
             <div class="htp-title">
-                <span class="htp-letter-box">H</span>
-                <span>OW TO P</span>
-                <span class="htp-letter-box">La</span>
-                <span>Y</span>
+                <span class="htp-letter-box">H</span><span>OW TO P</span><span class="htp-letter-box">La</span><span>Y</span>
             </div>
             
             <!-- Steps -->
@@ -426,23 +430,23 @@
                     <div class="htp-example-grid">
                         <!-- Row 1 -->
                         <div class="htp-grid-cell empty"></div>
-                        <div class="htp-grid-cell highlight">
+                        <div class="htp-grid-cell">
                             <span class="htp-grid-number">1</span>A
                         </div>
                         <div class="htp-grid-cell empty"></div>
                         <div class="htp-grid-cell empty"></div>
                         
                         <!-- Row 2 -->
-                        <div class="htp-grid-cell highlight">
+                        <div class="htp-grid-cell">
                             <span class="htp-grid-number">2</span>M
                         </div>
-                        <div class="htp-grid-cell highlight">O</div>
-                        <div class="htp-grid-cell highlight">L</div>
-                        <div class="htp-grid-cell highlight">E</div>
+                        <div class="htp-grid-cell">O</div>
+                        <div class="htp-grid-cell">L</div>
+                        <div class="htp-grid-cell">E</div>
                         
                         <!-- Row 3 -->
                         <div class="htp-grid-cell empty"></div>
-                        <div class="htp-grid-cell highlight">M</div>
+                        <div class="htp-grid-cell">M</div>
                         <div class="htp-grid-cell empty"></div>
                         <div class="htp-grid-cell empty"></div>
                     </div>
