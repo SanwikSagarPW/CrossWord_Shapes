@@ -183,45 +183,191 @@
         .popup-overlay {
             position: fixed; top: 0; left: 0;
             width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(10px);
             display: none; justify-content: center; align-items: center;
             z-index: 1000; padding: 20px;
             animation: fadeIn 0.3s ease;
+            overflow-y: auto;
         }
         .popup-overlay.active { display: flex; }
         .popup-content {
-            background-color: transparent; border-radius: 12px;
-            padding: 0; max-width: 800px; width: 100%;
-            max-height: 90vh; overflow: hidden; position: relative;
+            background-color: var(--background-color); 
+            border: 2px solid var(--accent-color);
+            border-radius: 12px;
+            padding: 40px 30px; 
+            max-width: 900px; 
+            width: 100%;
+            max-height: 90vh; 
+            overflow-y: auto; 
+            position: relative;
             animation: slideUp 0.4s ease;
-            display: flex; flex-direction: column; align-items: center;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center;
         }
         @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
-        .close-btn { display: none; }
-        .how-to-play-img { width: 100%; max-width: 100%; height: auto; display: block; }
-        .back-btn {
-            margin-top: 20px; padding: 15px 50px;
-            font-size: 1.1em; font-family: 'Roboto Mono', monospace; font-weight: bold;
-            text-transform: uppercase; background-color: var(--accent-color);
-            color: var(--background-color); border: none; border-radius: 8px;
-            cursor: pointer; transition: all 0.3s ease; letter-spacing: 2px;
+        
+        /* How to Play Content */
+        .htp-title {
+            font-family: 'Bungee', cursive;
+            font-size: 3rem;
+            margin-bottom: 40px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
         }
-        .back-btn:hover { background-color: var(--button-hover); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(3, 218, 198, 0.6); }
+        .htp-title span { color: var(--accent-color); }
+        .htp-letter-box {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border: 2px solid var(--accent-color);
+            background-color: var(--cell-background);
+            font-family: 'Roboto Mono', monospace;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+        
+        .htp-steps {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .htp-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+        
+        .htp-step-number {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .htp-step-text {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        
+        .htp-example-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 50px);
+            grid-template-rows: repeat(3, 50px);
+            gap: 2px;
+            margin: 10px 0;
+        }
+        
+        .htp-grid-cell {
+            border: 1px solid var(--border-color);
+            background-color: var(--cell-background);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Roboto Mono', monospace;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            position: relative;
+        }
+        
+        .htp-grid-cell.empty {
+            background-color: var(--grid-background);
+        }
+        
+        .htp-grid-cell.highlight {
+            background-color: rgba(3, 218, 198, 0.3);
+        }
+        
+        .htp-grid-number {
+            position: absolute;
+            top: 2px;
+            left: 3px;
+            font-size: 0.5rem;
+            color: var(--text-color);
+        }
+        
+        .htp-check-btn {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-family: 'Roboto Mono', monospace;
+            font-weight: bold;
+            background-color: var(--accent-color);
+            color: var(--background-color);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 15px rgba(3, 218, 198, 0.4);
+        }
+        
+        .back-btn {
+            margin-top: 30px; 
+            padding: 15px 50px;
+            font-size: 1.1em; 
+            font-family: 'Roboto Mono', monospace; 
+            font-weight: bold;
+            text-transform: uppercase; 
+            background-color: var(--accent-color);
+            color: var(--background-color); 
+            border: none; 
+            border-radius: 8px;
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            letter-spacing: 2px;
+        }
+        .back-btn:hover { 
+            background-color: var(--button-hover); 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 20px rgba(3, 218, 198, 0.6); 
+        }
 
         /* Mobile Responsive */
         @media (max-width: 600px) {
             .game-title-text { font-size: 4rem; }
             .puzzle-subtitle { font-size: 0.9rem; letter-spacing: 3px; }
             .btn { padding: 15px 30px; font-size: 1em; }
-            .popup-content { padding: 0; max-width: 95%; }
+            .popup-content { padding: 25px 15px; max-width: 95%; }
             .back-btn { padding: 12px 40px; font-size: 1em; }
+            .htp-title { font-size: 2rem; margin-bottom: 30px; }
+            .htp-letter-box { width: 40px; height: 40px; font-size: 1.2rem; }
+            .htp-step-text { font-size: 1rem; }
+            .htp-example-grid { grid-template-columns: repeat(4, 40px); grid-template-rows: repeat(3, 40px); }
+            .htp-grid-cell { font-size: 1rem; }
+            .htp-check-btn { padding: 12px 30px; font-size: 1rem; }
         }
         @media (max-width: 400px) {
             .game-title-text { font-size: 3rem; }
             .puzzle-subtitle { font-size: 0.8rem; letter-spacing: 2px; }
             .buttons-container { padding: 0 10px; }
             .back-btn { padding: 10px 30px; font-size: 0.9em; }
+            .htp-title { font-size: 1.5rem; margin-bottom: 20px; }
+            .htp-letter-box { width: 35px; height: 35px; font-size: 1rem; }
+            .htp-example-grid { grid-template-columns: repeat(4, 35px); grid-template-rows: repeat(3, 35px); }
+            .htp-grid-cell { font-size: 0.9rem; }
+        }
+        
+        /* Landscape mode for mobile/tablets */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .popup-content { padding: 20px 15px; max-height: 95vh; }
+            .htp-title { font-size: 1.8rem; margin-bottom: 20px; }
+            .htp-steps { gap: 25px; }
+            .htp-step { gap: 15px; }
+            .htp-step-text { font-size: 0.9rem; }
+            .back-btn { margin-top: 20px; padding: 10px 35px; }
         }
 
         /* Music Control Button */
@@ -264,7 +410,51 @@
     <!-- How to Play Popup -->
     <div class="popup-overlay" id="howToPopup">
         <div class="popup-content">
-            <img src="how_to_play.png" alt="How to Play Instructions" class="how-to-play-img" id="howToPlayImg">
+            <!-- Title with boxed letters -->
+            <div class="htp-title">
+                <span class="htp-letter-box">H</span>
+                <span>OW TO P</span>
+                <span class="htp-letter-box">La</span>
+                <span>Y</span>
+            </div>
+            
+            <!-- Steps -->
+            <div class="htp-steps">
+                <!-- Step 1 -->
+                <div class="htp-step">
+                    <div class="htp-step-number">1. Type in the chemistry themed crossword puzzle</div>
+                    <div class="htp-example-grid">
+                        <!-- Row 1 -->
+                        <div class="htp-grid-cell empty"></div>
+                        <div class="htp-grid-cell highlight">
+                            <span class="htp-grid-number">1</span>A
+                        </div>
+                        <div class="htp-grid-cell empty"></div>
+                        <div class="htp-grid-cell empty"></div>
+                        
+                        <!-- Row 2 -->
+                        <div class="htp-grid-cell highlight">
+                            <span class="htp-grid-number">2</span>M
+                        </div>
+                        <div class="htp-grid-cell highlight">O</div>
+                        <div class="htp-grid-cell highlight">L</div>
+                        <div class="htp-grid-cell highlight">E</div>
+                        
+                        <!-- Row 3 -->
+                        <div class="htp-grid-cell empty"></div>
+                        <div class="htp-grid-cell highlight">M</div>
+                        <div class="htp-grid-cell empty"></div>
+                        <div class="htp-grid-cell empty"></div>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="htp-step">
+                    <div class="htp-step-number">2. Click 'CHECK' to verify your answer</div>
+                    <button class="htp-check-btn">CHECK</button>
+                </div>
+            </div>
+            
             <button class="back-btn" id="backBtn">BACK</button>
         </div>
     </div>
@@ -284,7 +474,6 @@
         const howToBtn = document.getElementById('howToBtn');
         const howToPopup = document.getElementById('howToPopup');
         const backBtn = document.getElementById('backBtn');
-        const howToPlayImg = document.getElementById('howToPlayImg');
         const bgAnimation = document.getElementById('bgAnimation');
         const bgMusic = document.getElementById('bgMusic');
         const musicControl = document.getElementById('musicControl');
@@ -434,7 +623,6 @@
         startWordAnimation();
 
         // Event Listeners
-        howToPlayImg.addEventListener('error', function() { this.style.display = 'none'; });
         playBtn.addEventListener('click', () => { window.location.href = 'game.html'; });
         howToBtn.addEventListener('click', () => {
             howToPopup.classList.add('active');
